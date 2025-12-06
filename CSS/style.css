@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FDF6F0;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #FEF1F6;
+    box-shadow: 0 2px 15px rgba(75, 0, 130, 0.05); 
+    position: relative; /* Gölgenin öne çıkması için */
+    z-index: 10; /* Diğer elementlerin üstünde durması için */
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #c03473;
+    font-style: italic;
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #c03473;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.nav-bar a:hover {
+    color: #e07ac2;
+}
+
+.hero-area {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 100px;
+    height: 80vh; /* Ekran yüksekliğinin %80'i */
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    color: #B84A76;
+    margin-bottom: 20px;
+    font-style:italic;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #8E3F5C;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.btn-start {
+    background-color:#e07ac2;
+    color: #FDF6F0;
+    border: 2px solid #d197c0;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 13px;
+    cursor: pointer; /* İmleci buton üzerine geldiğinde el işareti yapar */
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(216, 112, 166, 0.35);
+    transition: all 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #e05eb9; 
+    color: #fff;
+    transform: translateY(-2px); 
+}
+
+.little-msg {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #B84A76;
+}
+
+/* ANİMASYON PENCERESİ */
+.hero-scroll-window {
+    width: 45%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(75, 0, 130, 0.1);
+    display: flex;
+    justify-content: center;
+}
+
+/* KAYAN ŞERİT */
+.scroll-track {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    animation: scrollLoop 15s linear infinite;
+}
+
+/* TEKİL KART */
+.skin-card {
+    background-color: #fff;
+    color: #B84A76;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #E6E6FA;
+}
+
+/* GERÇEK SONSUZ ANİMASYON */
+@keyframes scrollLoop {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* ÜST VE ALT SİLİKLEŞME */
+.fade-top, .fade-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fade-top {
+    top: 0;
+    background: linear-gradient(to bottom, #FFF0F5 0%, transparent 100%);
+}
+
+.fade-bottom {
+    bottom: 0;
+    background: linear-gradient(to top, #FFF0F5 0%, transparent 100%);
+}
+
+.features-section {
+    padding: 80px 100px;
+    background: linear-gradient(to bottom, #FFF7F9, #FFFFFF);
+
+}
+
+.section-title{
+    text-align: center;
+    font-size: 36px;
+    color: #B84A76;
+    margin-bottom: 50px;
+    font-weight: 700;
+    font-style: italic;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-shadow: 0 4px 12px rgba(184, 74, 118, 0.35);
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.info-card {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid #E6E6FA;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(184, 74, 118, 0.13);
+    padding: 28px 22px;
+    text-align: center;
+    transition: 0.3s;
+    flex:1;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(75, 0, 130, 0.1);
+    background-color: #fae6fc;
+}
+
+.icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: #B84A76;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #8E3F5C;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #D87093;
+    font-weight: bold;
+    font-size: 14px;
+}
