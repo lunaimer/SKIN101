@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth; /* Yumuşak kaydırma efekti */
+}
 body {
     margin: 0;
     padding: 0;
@@ -10,10 +13,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: #FEF1F6;
+    background-color: rgba(254, 241, 246, 0.95);
     box-shadow: 0 2px 15px rgba(75, 0, 130, 0.05); 
-    position: relative; /* Gölgenin öne çıkması için */
-    z-index: 10; /* Diğer elementlerin üstünde durması için */
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
 }
 
 .logo {
@@ -75,6 +79,7 @@ body {
     font-weight: bold;
     box-shadow: 0 8px 20px rgba(216, 112, 166, 0.35);
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-start:hover {
@@ -217,4 +222,142 @@ body {
     color: #D87093;
     font-weight: bold;
     font-size: 14px;
+}
+
+.routine-banner-section {
+    background: linear-gradient(to right, #FFF7F9 0%, #F3F8F5 100%);
+    padding: 120px 100px;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+
+.routine-banner-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(111,130,106,0.12), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(184,74,118,0.10), transparent 45%);
+    opacity: 0.25;
+    filter: blur(20px);
+    z-index: 0;
+}
+
+.routine-banner-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255, 0.8);
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+    max-width: 1200px;   
+    margin: 0 auto;     
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 60px;  
+    position: relative;
+    z-index: 2;
+    min-height: 420px;
+}
+
+.routine-text {
+    flex:1; /*alanın yarısını kaplar */
+    max-width: 520px;
+    text-align: center;
+}
+
+.routine-text h2 {
+    color: #4F7C69;
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow: 0 6px 20px rgba(111, 130, 106, 0.25);
+    text-align: center;
+}
+
+.routine-text p {
+    color: #6F8F84;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.btn-routine {
+    display: inline-block;
+    background: linear-gradient(135deg, #FDF6F0, #e5f2ec);
+    color: rgb(46, 77, 61);
+    border: none;
+    border-radius: 14px;
+    padding: 13px 36px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(127, 169, 155, 0.35);
+    transition: 0.3s;
+    align-items: center;
+}
+
+.btn-routine:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(127, 169, 155, 0.45);
+    color: rgb(46, 77, 61);
+}
+
+.routine-image-box {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    max-width: 520px;
+    transform: translateX(-30px);
+    box-shadow: 0 0 0 12px rgba(243,248,245,0.6);
+    border-radius: 36px;
+}
+
+.routine-image-box img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 13px;
+    display: block;
+    border: 3px solid #FDF6F0;
+    box-shadow: 0 10px 30px rgba(75, 0, 130, 0.1);
+    filter: brightness(1.03) contrast(1.05);
+}
+
+.routine-badges {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.routine-badge {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #d9e5dc;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6F826A;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+.routine-steps {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #6F826A;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.9;
+    justify-content: center;
 }
