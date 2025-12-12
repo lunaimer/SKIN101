@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doğal Maskeler Rehberi - SKIN101</title>
+    <link rel="stylesheet" href="CSS/style.css"> 
+    <style>
+        /* ================================================= */
+        /* Genel Sayfa Stilleri (Soft Renkler) */
+        /* ================================================= */
+
+        body {
+            background-color: #FFF9FC; /* Çok Açık Pembe/Krem Arka Plan */
+            color: #444;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar stili (Genel stil dosyanızdan alınmıştır, tutarlılık için) */
+        .nav-bar {
+            padding: 15px 50px;
+            border-bottom: 1px solid #FFEDED;
+            background-color: #FFFAFE;
+        }
+
+        /* Rehber Başlığı */
+        .maske-baslik {
+            font-size: 2.5em;
+            color: #C64F78; /* Orta Pembe */
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            position: relative;
+            z-index: 10; 
+        }
+
+        /* Rehber İçerik Kartları */
+        .rehber-bolum {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #F8FFE8; /* Açık Yeşil/Sarımsı Krem */
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(198, 79, 120, 0.1); /* Hafif pembe gölge */
+            border-left: 5px solid #FFD700; /* Sarı detay çizgisi */
+        }
+        .rehber-bolum h3 {
+            color: #4CAF50; /* Yumuşak Yeşil Başlık */
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #E0F8E0;
+        }
+        .rehber-bolum strong {
+            color: #C64F78; /* Pembe Vurgu */
+            font-weight: bold;
+        }
+        .rehber-bolum ul {
+            padding-left: 20px;
+        }
+        .rehber-bolum li {
+            margin-bottom: 10px;
+        }
+
+        /* ================================================= */
+        /* YAPRAK ANİMASYONU STİLLERİ */
+        /* ================================================= */
+
+        .falling-leaves-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px; /* Sadece başlık etrafında uçuşsun */
+            overflow: hidden;
+            pointer-events: none; /* Tıklamayı engelleme */
+            z-index: 5;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #A5D6A7; /* Açık Yeşil Yaprak Rengi */
+            border-radius: 50%;
+            opacity: 0.8;
+            transform: rotate(0deg);
+            animation: fall linear infinite, wind ease-in-out infinite;
+        }
+
+        /* Yaprak Şekli (Minimal) */
+        .leaf::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #FFD700; /* Sarı Damar Rengi */
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Basit Dörtgen Yaprak */
+            opacity: 0.2;
+        }
+
+        /* Yaprak Düşme Animasyonu */
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(500px) rotate(720deg); opacity: 0; }
+        }
+
+        /* Rüzgar Animasyonu (Yatay Hareket) */
+        @keyframes wind {
+            0% { left: 0%; }
+            50% { left: 5%; }
+            100% { left: 0%; }
+        }
+
+        /* Her yaprak için farklı başlangıç konumu, hızı ve boyutu */
+        .leaf:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 0s; width: 15px; height: 15px; }
+        .leaf:nth-child(2) { left: 25%; animation-duration: 10s; animation-delay: 2s; width: 20px; height: 20px; }
+        .leaf:nth-child(3) { left: 40%; animation-duration: 7s; animation-delay: 4s; width: 18px; height: 18px; }
+        .leaf:nth-child(4) { left: 55%; animation-duration: 9s; animation-delay: 6s; width: 22px; height: 22px; }
+        .leaf:nth-child(5) { left: 70%; animation-duration: 11s; animation-delay: 8s; width: 16px; height: 16px; }
+        .leaf:nth-child(6) { left: 85%; animation-duration: 6s; animation-delay: 10s; width: 19px; height: 19px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="logo" style="color: #4CAF50;">SKIN101</div>
+        <ul>
+            <li><a href="index.html" style="color: #C64F78;">Ana Sayfa</a></li>
+            <li><a href="#" style="color: #C64F78;">Rutinler</a></li>
+            <li><a href="#" style="color: #C64F78;">İletişim</a></li>
+        </ul>
+    </nav>
+    
+    <div class="falling-leaves-container">
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+        <div class="leaf"></div>
+    </div>
+
+    <div class="maske-baslik">
+        🌿 CİLDİNİZE ÖZEL DOĞAL TARİFLER
+    </div>
+
+    <div style="text-align: center; color: #777; margin-bottom: 40px; position: relative; z-index: 10;">
+        <p>Evdeki malzemelerle cildinizi besleyin ve canlandırın.</p>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>✨ Yağlı ve Akneye Eğilimli Ciltler İçin Maske</h3>
+        <ul>
+            <li>
+                <strong>| Amaç:</strong> Yağ dengesini sağlamak, gözenekleri temizlemek.
+            </li>
+            <li>
+                <strong>| Önerilen Formül:</strong> **Kil (Yeşil/Bentonit)** ve **Bal** karışımı.
+            </li>
+            <li>
+                <strong>| Uygulama İpucu:</strong> Sadece T bölgesine uygulayarak kurumasına izin verin.
+            </li>
+        </ul>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>💧 Kuru ve Nemsiz Ciltler İçin Maske</h3>
+        <ul>
+            <li>
+                <strong>| Amaç:</strong> Yoğun nem sağlamak ve cilt bariyerini güçlendirmek.
+            </li>
+            <li>
+                <strong>| Önerilen Formül:</strong> Ezilmiş **Avokado**, **Zeytinyağı** ve **Yulaf Ezmesi**.
+            </li>
+            <li>
+                <strong>| Uygulama İpucu:</strong> 15-20 dakika beklettikten sonra ılık suyla yıkayın.
+            </li>
+        </ul>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>🌸 Hassas Ciltler İçin Maske</h3>
+        <ul>
+            <li>
+                <strong>| Amaç:</strong> Kızarıklığı ve tahrişi yatıştırmak.
+            </li>
+            <li>
+                <strong>| Önerilen Formül:</strong> **Sade Yoğurt** ve Taze **Aloe Vera Jeli**.
+            </li>
+            <li>
+                <strong>| Uygulama İpucu:</strong> Soğuk uygulama için malzemeleri dolapta bekletin.
+            </li>
+        </ul>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>☀️ Normal ve Karma Ciltler İçin Maske</h3>
+        <ul>
+            <li>
+                <strong>| Amaç:</strong> Genel dengeyi korumak, bölgeleri ayrı beslemek.
+            </li>
+            <li>
+                <strong>| Önerilen Formül:</strong> Ezilmiş **Muz** ve **Bal** (Tüm yüz), T bölgesine ilave olarak **Limon Suyu** (Dikkatli kullanılmalı).
+            </li>
+            <li>
+                <strong>| Uygulama İpucu:</strong> Limon suyu sadece akşamları kullanılmalı ve ardından güneş kremi sürülmelidir.
+            </li>
+        </ul>
+    </div>
+    
+    </body>
+</html>
