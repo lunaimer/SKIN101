@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nemlendirme Rehberi - SKIN101</title>
+    <link rel="stylesheet" href="CSS/style.css"> 
+    <style>
+        /* ================================================= */
+        /* Genel Sayfa Stilleri (Soft Mavi/Pembe Tonları) */
+        /* ================================================= */
+
+        body {
+            background-color: #F0F8FF; /* Çok Açık Mavi (AliceBlue) Arka Plan */
+            color: #333;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Navbar stili (Tutarlılık için) */
+        .nav-bar {
+            padding: 15px 50px;
+            border-bottom: 1px solid #E0FFFF; /* Açık Mavi Çizgi */
+            background-color: #FFFFFF; /* Beyaz Navbar */
+        }
+
+        /* Rehber Başlığı */
+        .nem-baslik {
+            font-size: 2.5em;
+            color: #4682B4; /* Soft Mavi Başlık Rengi */
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+            position: relative;
+            z-index: 10; 
+        }
+
+        /* Rehber İçerik Kartları */
+        .rehber-bolum {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 30px;
+            background-color: #F8F8FF; /* Beyazımsı Krem */
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(100, 149, 237, 0.15); /* Soft Mavi Gölge */
+            border-left: 5px solid #FFC0CB; /* Açık Pembe detay çizgisi */
+        }
+        .rehber-bolum h3 {
+            color: #4169E1; /* Mavi Başlık */
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #E6E6FA; /* Soft Morumsu Mavi çizgi */
+        }
+        .rehber-bolum strong {
+            color: #C64F78; /* Orta Pembe Vurgu */
+            font-weight: bold;
+        }
+        .rehber-bolum ul {
+            padding-left: 20px;
+        }
+        .rehber-bolum li {
+            margin-bottom: 10px;
+        }
+        
+        /* ================================================= */
+        /* SU DAMLASI ANİMASYONU STİLLERİ */
+        /* ================================================= */
+
+        .falling-drops-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .drop {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #87CEEB; /* Gökyüzü Mavisi */
+            border-radius: 50% 50% 50% 0; /* Damla şekli */
+            transform: rotate(-45deg);
+            opacity: 0.7;
+            animation: drip linear infinite, sway ease-in-out infinite;
+        }
+
+        /* Damla Düşme Animasyonu */
+        @keyframes drip {
+            0% { transform: translateY(-100px) rotate(-45deg); opacity: 0; }
+            5% { opacity: 0.7; }
+            100% { transform: translateY(600px) rotate(-45deg); opacity: 0; }
+        }
+
+        /* Hafif Yan Sallanma Animasyonu */
+        @keyframes sway {
+            0% { margin-left: 0; }
+            50% { margin-left: 10px; }
+            100% { margin-left: 0; }
+        }
+
+        /* Her damla için farklı konum ve hız */
+        .drop:nth-child(1) { left: 15%; animation-duration: 9s; animation-delay: 0s; }
+        .drop:nth-child(2) { left: 30%; animation-duration: 7s; animation-delay: 3s; width: 12px; height: 12px; }
+        .drop:nth-child(3) { left: 50%; animation-duration: 11s; animation-delay: 6s; }
+        .drop:nth-child(4) { left: 65%; animation-duration: 8s; animation-delay: 9s; width: 18px; height: 18px; }
+        .drop:nth-child(5) { left: 80%; animation-duration: 10s; animation-delay: 12s; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="logo" style="color: #4169E1;">SKIN101</div>
+        <ul>
+            <li><a href="index.html" style="color: #4682B4;">Ana Sayfa</a></li>
+            <li><a href="#" style="color: #4682B4;">Rutinler</a></li>
+            <li><a href="#" style="color: #4682B4;">İletişim</a></li>
+        </ul>
+    </nav>
+    
+    <div class="falling-drops-container">
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="drop"></div>
+    </div>
+
+    <div class="nem-baslik">
+        💧 CİLDİNİZİN NEME EN ÇOK İHTİYACI OLAN İÇERİKLER
+    </div>
+
+    <div style="text-align: center; color: #555; margin-bottom: 40px; position: relative; z-index: 10;">
+        <p>Hangi cilt tipine sahip olursanız olun, doğru nemlendirme genç ve sağlıklı bir cildin anahtarıdır.</p>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>🧊 Kuru ve Nemsiz Ciltler İçin İçerikler</h3>
+        <p>Kuru ciltler için amaç, nemi içeri hapsetmek ve cilt bariyerini onarmaktır.</p>
+        <ul>
+            <li>
+                <strong>Hyaluronik Asit:</strong> Havadan nem çeker. Cildin derin katmanlarına hidrasyon sağlar.
+            </li>
+            <li>
+                <strong>Seramid (Ceramide):</strong> Cilt bariyerinin yapı taşlarıdır. Cildin nem kaybını önlemede kritiktir.
+            </li>
+            <li>
+                <strong>Yağ Bazlı (Occlusive) Nemlendiriciler:</strong> Shea yağı gibi, nemin dışarı kaçmasını engeller.
+            </li>
+        </ul>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>🍃 Yağlı ve Akneye Eğilimli Ciltler İçin İçerikler</h3>
+        <p>Yağlı ciltler nemi sever, ancak ağır formüllerden kaçınmalıdır.</p>
+        <ul>
+            <li>
+                <strong>Jel Formüller:</strong> Yağsız (Oil-Free) ve komedojenik olmayan (Non-Comedogenic) hafif formüller tercih edilmelidir.
+            </li>
+            <li>
+                <strong>Niasinamid (B3 Vitamini):</strong> Sebum üretimini dengelemeye yardımcı olurken, cildi güçlendirir.
+            </li>
+            <li>
+                <strong>Aloe Vera:</strong> Hafif nem sağlar ve cildi yatıştırır.
+            </li>
+        </ul>
+    </div>
+
+    <div class="rehber-bolum">
+        <h3>🌸 Hassas ve Tahrişe Eğilimli Ciltler İçin İçerikler</h3>
+        <p>İçerik listesi kısa, parfüm, alkol ve esans içermeyen ürünler idealdir.</p>
+        <ul>
+            <li>
+                <strong>Yulaf Özü (Oat Extract):</strong> Cildi anında yatıştırır ve kızarıklığı azaltmaya yardımcı olur.
+            </li>
+            <li>
+                <strong>Pantenol (B5 Vitamini):</strong> Cilt bariyerini destekler ve onarıcı etkiye sahiptir.
+            </li>
+            <li>
+                <strong>Gliserin:</strong> Tahriş etmeden cilde nem sağlar.
+            </li>
+        </ul>
+    </div>
+    
+    </body>
+</html>
